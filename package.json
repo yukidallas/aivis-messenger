@@ -21,6 +21,7 @@
     "babel-preset-latest": "^6.24.1",
     "body-parser": "^1.17.2",
     "config": "^1.26.1",
+    "ejs": "^2.5.6",
     "express": "^4.15.3",
     "lodash": "^4.17.4",
     "request": "^2.81.0"

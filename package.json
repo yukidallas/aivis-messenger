@@ -1,0 +1,31 @@
+{
+  "name": "aivis-messenger",
+  "version": "0.0.0",
+  "description": "Facebook Messenger Bot",
+  "main": "app.js",
+  "scripts": {
+    "start": "./node_modules/.bin/babel-node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yukidallas/aivis-messenger.git"
+  },
+  "author": "Yuki Dallas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yukidallas/aivis-messenger/issues"
+  },
+  "homepage": "https://github.com/yukidallas/aivis-messenger#readme",
+  "dependencies": {
+    "babel-preset-latest": "^6.24.1",
+    "body-parser": "^1.17.2",
+    "config": "^1.26.1",
+    "express": "^4.15.3",
+    "lodash": "^4.17.4",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1"
+  }
+}

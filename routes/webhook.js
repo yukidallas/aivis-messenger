@@ -3,12 +3,14 @@ import {Router} from 'express';
 
 import receiveApi from '../lib/messenger-api-helpers/receive';
 
+
 const router = Router();
 
 const VALIDATION_TOKEN = (process.env.MESSENGER_VALIDATION_TOKEN) ?
   (process.env.MESSENGER_VALIDATION_TOKEN) :
   config.get('validationToken');
 
+// GET /webhook
 router.get('/', (req, res) => {
   if (req.query['hub.mode'] === 'subscribe' &&
       req.query['hub.verify_token'] === VALIDATION_TOKEN) {
@@ -20,6 +22,7 @@ router.get('/', (req, res) => {
   }
 });
 
+// POST /webhook
 router.post('/', (req, res) => {
   const data = req.body;
 
@@ -30,6 +33,10 @@ router.post('/', (req, res) => {
       pageEntry.messaging.forEach((messagingEvent) => {
         if (messagingEvent.message) {
           receiveApi.handleReceiveMessage(messagingEvent);
+        } else if (messagingEvent.postback) {
+          receiveApi.handleReceivePostback(messagingEvent);
+        } else if (messagingEvent.account_linking) {
+          receiveApi.handleReceiveAccountLink(messagingEvent);
         }
       });
     });

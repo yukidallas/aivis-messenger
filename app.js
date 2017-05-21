@@ -8,6 +8,7 @@ import path from 'path';
 
 // ===== ROUTES ================================================================
 import index from './routes/index';
+import authorize from './routes/authorize';
 import webhook from './routes/webhook';
 
 const app = express();
@@ -26,6 +27,7 @@ app.use(bodyParser.json());
    ============================================= */
 
 app.use('/', index);
+app.use('/authorize', authorize);
 app.use('/webhook', webhook);
 
 app.listen(app.get('port'), () => {

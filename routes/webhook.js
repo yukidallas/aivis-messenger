@@ -1,4 +1,5 @@
 // ===== MODULES ===============================================================
+import config from 'config'
 import {Router} from 'express';
 
 import receiveApi from '../lib/messenger-api-helpers/receive';

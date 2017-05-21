@@ -1,4 +1,6 @@
 /node_modules/
+/config/database.json
 /config/development.json
+/config/production.json
 *.log
 sftp-config.json

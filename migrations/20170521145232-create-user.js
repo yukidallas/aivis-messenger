@@ -17,6 +17,9 @@ module.exports = {
       messenger_id: {
         type: Sequelize.STRING
       },
+      current_thread: {
+        type: Sequelize.STRING
+      },
       created_at: {
         allowNull: false,
         type: Sequelize.DATE
